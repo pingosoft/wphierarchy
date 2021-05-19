@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php get_header() ?>
+<!-- get_header('splash')-->
+<h1>index.php</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>WP Hierarchy</title>
-</head>
-
-<body>
-    <h1>index.php</h1>
-
-</body>
-
-</html>
+<?php get_footer('splash'); ?>
