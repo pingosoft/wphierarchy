@@ -5,9 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <h2>This is the header - (header.php) you can also have a custom header 'splash'</h2>
+    <h2>This is the header(header.php) you can also have a custom header ex.:'header-splash.php'</h2>
 </head>
 
-<body>
+<body<?php body_class(); ?>>
+    <div id="page">
+
+        <a href="#content" class="skip-link screen-reader-text">
+            <?php esc_html_e('Skip to content', 'wphierarchy'); ?>
+        </a>
+
+        <header id="masthead" class="site-header" role="banner">
+
+            <div class="site-branding">
+                <p class="site-title">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                        <?php bloginfo('name'); ?>
+                    </a>
+                </p>
+                <p class="site-description">
+                    <?php bloginfo('description'); ?>
+                </p>
+            </div>
+
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <?php
+                $args = [
+                    'theme_location' => 'main-menu'
+                ];
+                wp_nav_menu($args);
+                ?>
+            </nav>
+
+        </header>
+
+        <div id="content" class="site-content">
+            <!-- do not close the div#page here, but in the footer file. -->
